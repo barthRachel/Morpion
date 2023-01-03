@@ -123,3 +123,16 @@ body {
 	color: black;
 	border-color: #FC8600;
 }
+
+/** RESPONSIVE **/
+@media(width < 700px){
+	.win-message{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.win-message button {
+		margin-top: 10px;
+	}
+}
