@@ -9,7 +9,7 @@
 *{
 	font-family : 'Montserrat';
 	box-sizing : border-box;
-  }
+}
 
 body {
 	margin: 0;
@@ -23,7 +23,7 @@ body {
 	width: 100%;
 	height: 50%;
 	margin-top : 20px;
-	display: flex;
+    display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
@@ -97,7 +97,7 @@ body {
 }
 
 /* Message de fin de jeu */
-.win-message {
+.win-message, .backButton {
 	background-color: var(--color-set);
 	width: 50%;
 	display: flex;
@@ -108,7 +108,9 @@ body {
 	border-radius: 20px;
 }
 
-.win-message button {
+/* Boutons */
+
+.button {
 	border-radius: 10px;
 	font-size: 15px;
 	font-weight: bold;
@@ -116,9 +118,11 @@ body {
 	border: 2px solid black;
 	padding: 4px 8px;
 	cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
-.win-message button:hover {
+.button:hover {
 	background-color: var(--color-set);
 	color: black;
 	border-color: #FC8600;
@@ -126,13 +130,13 @@ body {
 
 /** RESPONSIVE **/
 @media(width < 700px){
-	.win-message{
+	.win-message, .backButton{
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	.win-message button {
+	.win-message > .button, .backButton > .button {
 		margin-top: 10px;
 	}
 }

@@ -11,7 +11,9 @@ let turn = false // false = x ; true = o
 
 startGame()
 
-restartButton.addEventListener('click', startGame)
+restartButton.addEventListener('click', () => {
+	startGame();
+})
 
 // Lancement du jeu
 function startGame() {
