@@ -29,13 +29,19 @@ body {
 	height: 100vh;
 }
 
+.choice {
+	display: flex;
+	justify-content: space-around;
+	width: 25%;
+}
+
 a {
 	border-radius: 10px;
 	font-size: 15px;
 	font-weight: bold;
 	background-color: white;
 	border: 2px solid black;
-	padding: 4px 8px;
+	padding: 10px;
 	cursor: pointer;
 	text-decoration: none;
 	color: black;
@@ -45,4 +51,15 @@ a:hover {
 	background-color: var(--color-set);
 	color: black;
 	border-color: #FC8600;
+}
+
+@media(width < 850px){
+	.choice {
+		flex-direction: column;
+	}
+
+	a {
+		margin-top: 10px;
+		text-align: center;
+	}
 }
