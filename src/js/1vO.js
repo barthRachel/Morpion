@@ -32,6 +32,10 @@ function handleCellClick(e) {
 	const cell = e.target
 	const currentClass = turn ? PLAYER_O : PLAYER_X
 
+	if(currentClass === PLAYER_X && cell.classList.contains('circle')){
+		cell.removeEventListener('click')
+	}
+
 	if(turn === false){	
 		cell.classList.add(currentClass)
 	}
