@@ -46,11 +46,9 @@ function handleCellClick(e) {
 		turn = !turn
 		if(turn === true){
 			iaPlay()
-			console.log(turn)
 			turn = !turn
 		} else {
 			setBoardHoverClass()
-			console.log(turn)
 		}
 	}
 }
@@ -66,7 +64,6 @@ function isEmpty(){
 			emptyCells.push(cell)
 		}
 	})
-	console.log(emptyCells)
 	return emptyCells
 }
 
@@ -75,10 +72,15 @@ function iaPlay(){
 	const emptyCells = isEmpty()
 	const random = Math.floor((Math.random() * (emptyCells.length-1)))
 
-	const play = emptyCells[random].classList.add(PLAYER_O)
-	console.log(emptyCells[random])
-	console.log(random)
-	return play
+	if(check(PLAYER_O)){
+		return endGame(false)
+	} else {
+		const play = emptyCells[random].classList.add(PLAYER_O)
+		if(check(PLAYER_O)){
+			return endGame(false)
+		}
+		return play
+	}
 }
 
 // Fin du jeu => Message qui s'affiche en fonction de si match nul ou non
