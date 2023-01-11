@@ -31,15 +31,54 @@ function startGame() {
 function handleCellClick(e) {
 	const cell = e.target
 	const currentClass = turn ? PLAYER_O : PLAYER_X
-	cell.classList.add(currentClass)
-	if (check(currentClass)) {
-		endGame(false)
-	} else if (isDraw()) {
-		endGame(true)
-	} else {
-		turn = !turn
-		setBoardHoverClass()
+
+	if(turn === false){	
+		cell.classList.add(currentClass)
 	}
+
+	if (check(currentClass)) { //une classe gagne
+		endGame(false)
+
+	} else if (isDraw()) { //match nul
+		endGame(true)
+
+	} else { //changement de tour
+		turn = !turn
+		if(turn === true){
+			iaPlay()
+			console.log(turn)
+			turn = !turn
+		} else {
+			setBoardHoverClass()
+			console.log(turn)
+		}
+	}
+}
+
+// Fonction pour voir quelles cellules sont vides
+function isEmpty(){
+	const emptyCells = []
+	const plainCells = []
+	cellElements.forEach(cell => {
+		if(cell.classList.contains('x') || cell.classList.contains('circle')){
+			plainCells.push(cell)
+		} else {
+			emptyCells.push(cell)
+		}
+	})
+	console.log(emptyCells)
+	return emptyCells
+}
+
+// Fonction coup de l'ordinateur
+function iaPlay(){
+	const emptyCells = isEmpty()
+	const random = Math.floor((Math.random() * (emptyCells.length-1)))
+
+	const play = emptyCells[random].classList.add(PLAYER_O)
+	console.log(emptyCells[random])
+	console.log(random)
+	return play
 }
 
 // Fin du jeu => Message qui s'affiche en fonction de si match nul ou non
@@ -63,12 +102,11 @@ function isDraw() {
 	})
 }
 
-// Au survol d'une cellule vide affiche X ou O en fonction du tour en cours
+// Au survol d'une cellule vide affiche X
 function setBoardHoverClass() {
 	boardElement.classList.remove(PLAYER_X)
 	boardElement.classList.remove(PLAYER_O)
 	if (turn) {
-		boardElement.classList.add(PLAYER_O)
 		winningMessageTextElement.innerText = "Au tour de O"
 	} else {
 		boardElement.classList.add(PLAYER_X)
