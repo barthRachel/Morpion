@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+	--color: #FFE74D; /* for hover */
+	--color-set: #EBD43C; /* when set */
+	--l: 10px; /* X line-width */
+}
+
+*{
+	font-family : 'Montserrat';
+	box-sizing : border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#playersNames{
+	border: 2px solid red;
+	width: 25%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin-top: 15px;
+}
+
+#player1, #player2{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+
+.warningParagraph{
+	color: red;
+	font-size: 15px;
+}
+
+.nameInput{
+	font-size: 15px;
+	padding: 8px;
+	border-radius: 10px;
+	border: 2px solid black;
+}
+
+.board {
+	width: 100%;
+	height: 50%;
+	margin-top : 20px;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+}
+
+.line {
+	display: flex;
+	justify-content: center;
+}
+
+.cell {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+/* Retrait de certaines bordures pour l'effet quadrillage */
+.c1, .c2, .c3 {
+	border-top: none;
+}
+
+.c1, .c4, .c7 {
+	border-left: none;
+}
+
+.c3, .c6, .c9 {
+	border-right: none;
+}
+
+.c7, .c8, .c9 {
+	border-bottom: none;
+}
+
+.cell.x, .cell.circle {
+	cursor: not-allowed;
+}
+
+/* Dessin de croix - Au survol */
+.board.x .cell:not(.circle):not(.x):hover {
+	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
+				linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
+	background-size: 80% 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Dessin de croix - Poser */
+.cell:not(.circle).x {
+	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
+				linear-gradient(to bottom right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2));
+	background-size: 80% 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Dessin de cercle - Au survol */
+.board.circle .cell:not(.circle):not(.x):hover {	
+	background: radial-gradient(var(--color) 60%, transparent 60%);
+}
+
+/* Dessin de cercle - Poser */
+.cell:not(.x).circle {
+	background: radial-gradient(var(--color-set) 60%, transparent 60%);
+}
+
+/* Message de fin de jeu */
+.win-message, .backButton {
+	background-color: var(--color-set);
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	font-size: 25px;
+	margin-top: 15px;
+	padding: 15px;
+	border-radius: 20px;
+}
+
+/* Boutons */
+
+.button {
+	border-radius: 10px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: white;
+	border: 2px solid black;
+	padding: 4px 8px;
+	cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.button:hover {
+	background-color: var(--color-set);
+	color: black;
+	border-color: #FC8600;
+}
+
+/* CSS Show / Hidden */
+.show{
+	display: flex;
+}
+
+.hidden{
+	display: none;
+}
+
+/** RESPONSIVE **/
+@media(width < 700px){
+	.win-message, .backButton{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.win-message > .button, .backButton > .button {
+		margin-top: 10px;
+	}
+}
