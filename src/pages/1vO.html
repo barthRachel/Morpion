@@ -4,15 +4,24 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
         <link rel="stylesheet" href="../css/game.css" />
-        <title>Joueur VS Ordinateur</title>
+        <title>Joueur VS IA</title>
     </head>
 
     <body>
         <div class="backButton">
-            <div class="gamePlayers">1 VS Ordinateur</div>
+            <div class="gamePlayers">1 VS IA</div>
             <a href="../../index.html" class="button">Retour</a>
         </div>
-        <div class="board" id="board">
+        <div id="playersNames" class="show">
+            <div id="player1" class="player">
+                <label for="name1">Joueur 1 : </label>
+                <input type="text" id="name1" class="nameInput" name="name1"/>
+                <p class="warningParagraph hidden">Veuillez renseigner un pseudo !</p>
+            </div>
+
+            <button id="startGame" class="button">Valider</button>
+        </div>
+        <div class="board hidden" id="board">
             <div class="line">
                 <div class="cell c1" data-cell></div>
                 <div class="cell c2" data-cell></div>
@@ -31,7 +40,7 @@
         </div>
         <div class="win-message" id="winMessage">
             <div id="winMessageText"></div>
-            <button id="restartButton" class="button">Recommencer</button>
+            <button id="restartButton" class="buttonHidden">Recommencer</button>
         </div>
 
 

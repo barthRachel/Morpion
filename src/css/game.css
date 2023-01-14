@@ -21,11 +21,40 @@ body {
 	align-items: center;
 }
 
+#playersNames{
+	border: 2px solid var(--color-set);
+	width: 25%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin-top: 15px;
+}
+
+.player{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 10px;
+	font-size: 25px;
+}
+
+.warningParagraph{
+	color: red;
+	font-size: 15px;
+}
+
+.nameInput{
+	font-size: 15px;
+	padding: 8px;
+	border-radius: 10px;
+	border: 2px solid black;
+}
+
 .board {
 	width: 100%;
 	height: 50%;
 	margin-top : 20px;
-    display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
@@ -128,6 +157,31 @@ body {
 	background-color: var(--color-set);
 	color: black;
 	border-color: #FC8600;
+}
+
+/* CSS Show / Hidden */
+.show{
+	display: flex;
+}
+
+.hidden{
+	display: none;
+}
+
+.buttonHidden{
+	border-radius: 10px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: var(--color-set);
+	border: 2px solid var(--color-set);
+	padding: 4px 8px;
+    text-decoration: none;
+    color: var(--color-set);
+}
+
+.buttonHidden:hover{
+	cursor: default;
+	pointer-events: none;
 }
 
 /** RESPONSIVE **/
