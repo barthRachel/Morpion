@@ -197,10 +197,10 @@ body {
 	}
 	
 	#playersNames{
-		width: 60%;
+		width: 80%;
 	}
 
 	.win-message, .backButton{
-		width: 60%;
+		width: 80%;
 	}
 }
