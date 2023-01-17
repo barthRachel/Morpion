@@ -196,3 +196,13 @@ body {
 		margin-top: 10px;
 	}
 }
+
+@media(width < 900px){
+	#playersNames{
+		width: 60%;
+	}
+
+	.win-message, .backButton{
+		width: 60%;
+	}
+}
