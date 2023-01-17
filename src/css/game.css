@@ -206,3 +206,13 @@ body {
 		width: 60%;
 	}
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2){
+	#playersNames{
+		width: 60%;
+	}
+
+	.win-message, .backButton{
+		width: 60%;
+	}
+}
