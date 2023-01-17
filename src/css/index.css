@@ -53,7 +53,7 @@ a:hover {
 	border-color: #FC8600;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2){
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and(-webkit-min-device-pixel-ratio: 4){
 	.choice {
 		flex-direction: column;
 	}
