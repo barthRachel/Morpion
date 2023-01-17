@@ -207,7 +207,7 @@ body {
 	}
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2){
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 3), only screen and(-webkit-min-device-pixel-ratio: 4){
 	#playersNames{
 		width: 60%;
 	}
