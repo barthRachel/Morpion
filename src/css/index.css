@@ -53,15 +53,13 @@ a:hover {
 	border-color: #FC8600;
 }
 
-@media(width < 850px){
-	@media only screen and (-webkit-min-device-pixel-ratio: 2){
-		.choice {
-			flex-direction: column;
-		}
-	
-		a {
-			margin-top: 10px;
-			text-align: center;
-		}
+@media only screen and (-webkit-min-device-pixel-ratio: 2){
+	.choice {
+		flex-direction: column;
 	}
-} 
+
+	a {
+		margin-top: 10px;
+		text-align: center;
+	}
+}
