@@ -1,6 +1,6 @@
 # Projet Personnel - "Morpion"
 
-### Réalisation - "Construisez une API sécurisée pour une application d'avis gastronomiques"
+### Réalisation - "Développer un jeu de morpion en utilisant uniquement HTML, CSS et JavaScript"
 
 - [Lien vers le jeu](https://barthrachel.github.io/Morpion/)
 
